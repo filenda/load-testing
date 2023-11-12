@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "b9f21c93-9779-4fbc-b4c5-72ade8a95a8d",
+		"name": "Working Shifts Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "388157"
+	},
+	"item": [
+		{
+			"name": "Worker",
+			"item": [
+				{
+					"name": "worker/:id/eligibleShifts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/worker/101/eligibleShifts?itemsPerPage=100&pageNumber=1&start=2023-02-20&end=2023-03-03",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"worker",
+								"101",
+								"eligibleShifts"
+							],
+							"query": [
+								{
+									"key": "itemsPerPage",
+									"value": "100"
+								},
+								{
+									"key": "pageNumber",
+									"value": "1"
+								},
+								{
+									"key": "start",
+									"value": "2023-02-20"
+								},
+								{
+									"key": "end",
+									"value": "2023-03-03"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "worker/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/worker/101",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"worker",
+								"101"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shift",
+			"item": [
+				{
+					"name": "shift/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/shift/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shift",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shift/:id/claim/worker/:workerId",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/shift/2/claim/worker/101",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"shift",
+								"2",
+								"claim",
+								"worker",
+								"101"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
