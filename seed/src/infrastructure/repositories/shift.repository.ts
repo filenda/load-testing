@@ -51,6 +51,8 @@ export class ShiftRepository {
           is_active: true,
           requirements: {
             every: {
+              //TODO: Check if it is possible to filter from the document_id column instead of
+              //unnecessarily joining the document table
               document: {
                 id: { in: worker.documents.map((doc) => doc.document.id) },
               },

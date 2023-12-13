@@ -55,6 +55,8 @@ model DocumentWorker {
   document_id Int
   worker      Worker   @relation(fields: [worker_id], references: [id])
   document    Document @relation(fields: [document_id], references: [id])
+
+  @@index([worker_id], name: "idx_worker_id")
 }
 
 model Shift {
@@ -67,4 +69,6 @@ model Shift {
   worker_id   Int?
   worker      Worker?    @relation(fields: [worker_id], references: [id])
   facility    Facility   @relation(fields: [facility_id], references: [id])
+
+  @@index([worker_id, is_deleted, start, end, profession], name: "idx_shift")
 }
